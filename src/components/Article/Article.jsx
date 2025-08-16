@@ -3,31 +3,32 @@ import { Link } from "react-router-dom";
 import styles from "./Article.module.css";
 import ReactionBar from "./ReactionBar";
 
-export default function Article() {
+export default function Article({ title, author, authorId, date, content }) {
+
+  const initials = author
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
   return (
     <div className={styles.article}>
       <span className={styles.tag}>IT</span>
 
-      <h2 className={styles.title}>
-        The Future of Software Development
-      </h2>
+      <h2 className={styles.title}>{title}</h2>
 
       <div className={styles.meta}>
-        <span className={styles.avatar}>AR</span>
+        <span className={styles.avatar}>{initials}</span>
         <p>
           By{" "}
-          <Link to="/authors/abonty-rahman" className={styles.author}>
-            Abonty Rahman
+          <Link to={`/authors/${authorId}`} className={styles.author}>
+            {author}
           </Link>{" "}
-          • Published on August 17, 2025 
+          • Published on {date}
         </p>
       </div>
-      <p className={styles.paragraph}>
-        React continues to evolve at a rapid pace, and 2025 promises to bring
-        some exciting new features and improvements that will reshape how we
-        build modern applications.
-      </p>
 
+      <p className={styles.paragraph}>{content}</p>
 
       <ReactionBar />
     </div>

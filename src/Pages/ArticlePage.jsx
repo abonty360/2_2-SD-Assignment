@@ -1,26 +1,27 @@
-import React, { useState } from "react";
 import Article from "../components/Article/Article";
 import CommentList from "../components/Article/CommentList";
-import Pagination from "../components/Pagination";
 import styles from "./ArticlePage.module.css";
+import { useParams } from "react-router-dom";
+import articles from "../data/articles"; 
 
 
 const ArticlePage = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { articleId } = useParams();
+  const article = articles[articleId] || articles[1]; // fallback to first if not found
 
   return (
     <div className={styles.page}>
-      {/* Breadcrumb */}
-      <div className={styles.breadcrumb}>Home → Articles</div>
-      <Article />
-      <CommentList />
-
-      {/* Pagination at bottom */}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={5}
-        onPageChange={(page) => setCurrentPage(page)}
+      <div className={styles.breadcrumb}>Home → Articles → {article.title}</div>
+      
+      <Article
+        title={article.title}
+        author={article.author}
+        authorId={article.authorId}
+        date={article.date}
+        content={article.content}
       />
+
+      <CommentList articleId={articleId} />
     </div>
   );
 };
