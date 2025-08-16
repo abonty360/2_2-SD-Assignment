@@ -1,0 +1,66 @@
+.article {
+  max-width: 720px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tag {
+  display: inline-block;
+  background: #eaf3ff;
+  color: #2563eb;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.avatar {
+  background: #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.author {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.paragraph {
+  color: #374151;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.heading {
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.authorLink {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.authorLink:hover {
+  text-decoration: underline;
+}

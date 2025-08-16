@@ -1,0 +1,21 @@
+.reactionBar {
+  display: flex;
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.reactionItem {
+  text-align: center;
+  cursor: pointer;
+}
+
+.reactionItem span {
+  font-size: 20px;
+  display: block;
+}
+
+.percentage {
+  font-size: 12px;
+  color: gray;
+  margin-top: 4px;
+}

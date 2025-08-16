@@ -1,0 +1,11 @@
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 12px;
+}
