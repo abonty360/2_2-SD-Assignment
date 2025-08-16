@@ -6,9 +6,9 @@ import articles from "../data/articles";
 const authors = {
     "abonty-rahman": {
         name: "Abonty Rahman",
-        initials: "AR",
-        role: "Software Engineer & Technical Writer",
-        bio: "Focused on modern web development, React ecosystem, and sharing knowledge with the developer community.",
+        image: "/images/abonty-rahman.jpg",
+        role: "Student",
+        bio: "CSE || AUST",
         stats: { articles: 12, followers: "1.5K", following: 230 },
         articleId: 1,
     },
@@ -26,7 +26,17 @@ const article = articles[author.articleId];
     return (
         <div className={styles.container}>
             <div className={styles.profileCard}>
-                <div className={styles.avatar}>{author.initials}</div>
+                <div className={styles.avatar}>
+        {author.image ? (
+          <img
+            src="/images/abonty-rahman.jpg"
+            alt={author.name}
+            className={styles.avatarImage}
+          />
+        ) : (
+          <span>{author.name[0]}</span>
+        )}
+      </div>
                 <div className={styles.info}>
                     <h2 className={styles.name}>{author.name}</h2>
                     <p className={styles.role}>{author.role}</p>

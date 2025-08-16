@@ -5,18 +5,18 @@ import styles from "./CommentList.module.css";
 
 const CommentList = () => {
   const [comments, setComments] = useState([
-    { id: 1, author: "Alice", time: "2h ago", text: "Great article!" },
-    { id: 2, author: "Bob", time: "1h ago", text: "Thanks for sharing." },
-    { author: "Charlie", text: "Can't wait for 2024 features." },
-    { author: "Dana", text: "Thanks for sharing." },
-    { author: "Eve", text: "Awesome insights!" },
-    { author: "Frank", text: "Interesting perspective." },
+    { id: 1, author: "User1", time: "6h ago", text: "Great article!" },
+    { id: 2, author: "User2", time: "5h ago", text: "Thanks for sharing." },
+    { author: "User3", time: "4h ago", text: "Can't wait for 2024 features." },
+    { author: "User4", time: "3h ago", text: "Thanks for sharing." },
+    { author: "User5", time: "2h ago", text: "Awesome insights!" },
+    { author: "User6", time: "1h ago", text: "Interesting perspective." },
   ]);
 
   const [newComment, setNewComment] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-   const commentsPerPage = 4;
+  const commentsPerPage = 4;
   const totalPages = Math.ceil(comments.length / commentsPerPage);
 
   const handleAddComment = () => {
@@ -33,7 +33,6 @@ const CommentList = () => {
     setComments(updatedComments);
     setNewComment("");
 
-    // Automatically go to the last page to show the new comment
     setCurrentPage(Math.ceil(updatedComments.length / commentsPerPage));
   };
 

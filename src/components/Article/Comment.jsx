@@ -33,6 +33,10 @@ export default function Comment({ author, text, time }) {
               {r.label}
             </span>
           ))}
+        </div> 
+        <div className={styles.commentActions}>
+          <button className={styles.actionBtn}>Reply</button>
+          <button className={styles.actionBtn}>Report</button>
         </div>
       </div>
     </div>
