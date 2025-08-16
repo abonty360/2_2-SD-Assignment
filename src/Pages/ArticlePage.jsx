@@ -7,7 +7,7 @@ import articles from "../data/articles";
 
 const ArticlePage = () => {
   const { articleId } = useParams();
-  const article = articles[articleId] || articles[1]; // fallback to first if not found
+  const article = articles[articleId] || articles[1]; 
 
   return (
     <div className={styles.page}>
