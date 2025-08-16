@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Article.module.css";
 import ReactionBar from "./ReactionBar";
 
-export default function Article({ title, author, authorId, date, content }) {
-
-  const initials = author
-    .split(" ")
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
+export default function Article({ title, author, authorId, date, content}) {
 
   return (
     <div className={styles.article}>
@@ -18,7 +12,8 @@ export default function Article({ title, author, authorId, date, content }) {
       <h2 className={styles.title}>{title}</h2>
 
       <div className={styles.meta}>
-        <span className={styles.avatar}>{initials}</span>
+        <img src="/images/abonty-rahman.jpg" alt="Abonty Rahman" className={styles.avatar} />
+
         <p>
           By{" "}
           <Link to={`/authors/${authorId}`} className={styles.author}>
